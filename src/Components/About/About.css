@@ -3,3 +3,10 @@ h2{
     padding-top: 50px;
     color: blue;
 }
+@media only screen and (max-width: 768px) {
+    h2 {
+        padding-left: 50px;
+        padding-top: 20px;
+        color: red;
+    }
+}
