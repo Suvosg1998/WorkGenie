@@ -1,0 +1,23 @@
+.navbar{
+    background-color: rgb(1, 1, 41);
+}
+.navlogo{
+    color: white;
+    font-weight:800;
+    font-size: 25px;
+}
+.collapsible-nav-dropdown{
+    color: aliceblue;
+}
+.av{
+  margin-right: 500px;
+    
+}
+.but{
+    position: absolute;
+    right: 150px;
+}
+#star{
+    color: aqua;
+    padding-bottom: 10px;
+}

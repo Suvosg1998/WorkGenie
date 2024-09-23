@@ -1,0 +1,105 @@
+#star{
+    color: aqua;
+    padding-bottom: 10px;
+}
+.foot-logo{
+    color: black;
+    font-weight:800;
+    font-size: 25px;
+    position: relative;
+    top: 70px;
+    right: 70px;
+}
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+}
+.foot ul{
+    margin-top: 30px;
+    margin-right: 80px;
+}
+.foot ul li{
+    list-style: none;
+    text-decoration: none;
+    margin-top: 10px;
+}
+.foot ul li a{
+    text-decoration: none;
+    color: rgb(102, 102, 102);
+}
+.foot-icons{
+    margin-top: 80px;
+}
+.foot-icons .icons{
+    font-size: 30px;
+    margin-left: 10px;
+}
+.foot2{
+    display: flex;
+    justify-content: space-evenly;
+}
+.sec1{
+    position: relative;
+    right: 90px;
+}
+.sec1 a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(102, 102, 102);
+}
+.sec3{
+    position: relative;
+    left: 90px;
+}
+.sec3 a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(102, 102, 102);
+}
+/* Media Query for devices with a width up to 768px (tablets) */
+@media (max-width: 768px) {
+    .footer, .foot2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foot-logo {
+        top: 20px;
+        right: 0;
+        text-align: center;
+    }
+
+    .foot ul {
+        margin-right: 0;
+    }
+
+    .sec1, .sec3 {
+        position: static;
+        text-align: center;
+    }
+}
+
+/* Media Query for devices with a width up to 480px (mobile phones) */
+@media (max-width: 480px) {
+    .foot-logo {
+        font-size: 20px;
+    }
+
+    .foot ul li {
+        margin-top: 5px;
+    }
+
+    .foot-icons .icons {
+        font-size: 25px;
+        margin-left: 5px;
+    }
+
+    .sec1 a, .sec3 a {
+        margin-left: 5px;
+    }
+
+    .footer, .foot2 {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
