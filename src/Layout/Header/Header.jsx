@@ -10,7 +10,7 @@ const Header = () => {
     <Navbar data-bs-theme="dark" expand="lg" className='navbar sticky-top'>
         <Container >
           <Navbar.Brand className="navlogo" href="/">Work Genie<FaStar id='star'/></Navbar.Brand>
-          <Nav className="av">
+          <Nav >
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="about">About</Nav.Link>
             <Nav.Link href="/reviews">Reviews</Nav.Link>
@@ -22,8 +22,11 @@ const Header = () => {
               <NavDropdown.Divider />
               <NavDropdown.Item href="allprofile">Find freelancers</NavDropdown.Item>
             </NavDropdown>
-            <Button href="/login"className='but'>Login</Button>
           </Nav>
+          <div className='d-flex '>
+            <Button href="/login"className='mx-2'>User</Button>
+            <Button href="/admin"className='mx-2'>Admin</Button>
+            </div>
         </Container>
       </Navbar>
   )

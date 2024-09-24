@@ -1,5 +1,6 @@
 export const baseURL="http://localhost:1000"
 export const endURL={
     auth:"/freelancers",
-    product:"/jobs"
+    product:"/jobs",
+    reviews:"/reviews"
 }

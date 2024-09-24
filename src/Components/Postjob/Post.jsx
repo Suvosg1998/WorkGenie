@@ -43,7 +43,7 @@ let formik=useFormik({
     .then(res=>{
       console.log("axios res",res.data)
       alert("Product added Successfully")
-      nevigate("/view")
+      nevigate("/jobs")
     })
     .catch(err=>{
       console.log("axios error",err)

@@ -14,6 +14,7 @@ import JobEdit from '../Components/Postjob/Jobs/JobDetails/JobEdit';
 import AllProfile from '../Components/Registration/Login/Profile/AllProfile';
 import ReviewSection from '../Components/Reviews/Reviews';
 import Edit_profile from '../Components/Registration/Login/Profile/Edit_profile';
+import Admin from '../Components/Postjob/Jobs/Admin';
 
 function Routing() {
   return (
@@ -30,9 +31,10 @@ function Routing() {
         <Route path="reviews" element={<ReviewSection />} />
         <Route path="post" element={<Post />} />
         <Route path='jobs'element={<Jobs/>}/>
-        <Route path='view'element={<View/>}/>
-        <Route path='view/jobDetails/:id'element={<JobDetails/>}/>
-        <Route path='view/jobEdit/:id'element={<JobEdit/>}/>
+        <Route path="admin" element={<Admin />} />
+        <Route path='admin/view'element={<View/>}/>
+        <Route path='admin/view/jobDetails/:id'element={<JobDetails/>}/>
+        <Route path='admin/view/jobEdit/:id'element={<JobEdit/>}/>
       </Routes>
       <Footer/>
     </Router>

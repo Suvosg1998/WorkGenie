@@ -3,12 +3,12 @@ import { Axiosinstance } from '../../../Api/Axiosinstance'
 import { endURL } from '../../../Api/ApiUrl'
 import { Button, Table} from 'react-bootstrap'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {MdDelete,MdViewHeadline } from "react-icons/md";
-import {RiAddCircleLine  } from "react-icons/ri";
 import { BiSolidEdit } from "react-icons/bi";
 
 const View = () => {
+  const navigate = useNavigate();
   let prod_api=endURL.product
   // console.log(prod_api);
   let[state,setState]=useState([])
@@ -41,10 +41,15 @@ console.log("Id of the product to be deleted",id);
   
 })
 }
+const logout = () => {
+  window.sessionStorage.clear();
+  navigate("/")
+};
 
   return (
  <section className='view m-5'>
-  <div className='top d-flex justify-content-end'><Button as={Link} to='/post' variant='outline-primary' className='d-flex m-2 fw-bold'><RiAddCircleLine  className='mt-1'></RiAddCircleLine>Post a Job</Button></div>
+  <div className='top d-flex justify-content-end'>
+    <Button onClick={logout}  variant='outline-danger' className='d-flex m-2 fw-bold'>Logout</Button></div>
     <Table bordered striped hover className='bg-dark'>
       <thead >
         <tr>

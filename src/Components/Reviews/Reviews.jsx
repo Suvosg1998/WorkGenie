@@ -1,112 +1,81 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react'
+import Carousel from 'react-bootstrap/Carousel';
+import Reviewform from './reviewform/Reviewform'; 
+import { baseURL } from '../../Api/ApiUrl';
+import { endURL } from '../../Api/ApiUrl';
+import axios from 'axios';
+import "./Reviews.css"
+import { FaStar } from 'react-icons/fa';
+import { Col, Container, Row } from 'react-bootstrap';
 
-// Single Review Component
-const Review = ({ name, review }) => {
-    return (
-        <div style={styles.reviewCard}>
-            <h3>{name}</h3>
-            <p>{review}</p>
-        </div>
-    );
+function Reviews() {
+    let api=baseURL+endURL.reviews;
+    console.log("api",api);
+    let[state,setState]=useState([]);
+    const getReview=()=>{
+        axios.get(api)
+        .then(res=>{
+            console.log("review",res.data);
+            setState(res.data)
+        })
+        .catch(err=>{
+            console.log("Axios error",err);
+        })
+    }
+    useEffect(()=>{
+        getReview()
+    },[setState,api])
+//rating
+const renderStars = (rating) => {
+    const totalStars = 5;
+    return [...Array(totalStars)].map((_, index) => (
+        <FaStar
+            key={index} 
+            size={24} 
+            color={index < rating ? '#ffc107' : '#e4e5e9'} 
+        />
+    ));
 };
-
-// Main Review Section Component
-const ReviewSection = () => {
-    const [reviews, setReviews] = useState([]);
-    const [name, setName] = useState('');
-    const [reviewText, setReviewText] = useState('');
-
-    // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (name && reviewText) {
-            const newReview = { name, review: reviewText };
-            setReviews([...reviews, newReview]);
-            setName('');
-            setReviewText('');
-        }
-    };
-
-    return (
-        <div style={styles.container}>
-            <h2>Reviews</h2>
-
-            {/* Review Form */}
-            <form onSubmit={handleSubmit} style={styles.form}>
-                <input
-                    type="text"
-                    placeholder="Your name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    style={styles.input}
-                />
-                <textarea
-                    placeholder="Your review"
-                    value={reviewText}
-                    onChange={(e) => setReviewText(e.target.value)}
-                    style={styles.textarea}
-                />
-                <button type="submit" style={styles.button}>Submit Review</button>
-            </form>
-
-            {/* Display Reviews */}
-            <div style={styles.reviewList}>
-                {reviews.map((review, index) => (
-                    <Review key={index} name={review.name} review={review.review} />
+  return (
+    <section>
+        <h5 className='mx-auto d-flex justify-content-center text-primary pt-4'>Testimonials</h5>
+         <h3 className='heading'>We Care About Our Customers Experience Too</h3>
+    <Container>
+        <Row className=' d-flex flex-column justify-content-center'>
+            <Col sm={12} md={6} className='my-4 mx-auto'>
+           <div className=' border border-primary rounded-2 p-4 shadow'>
+            <Carousel data-bs-theme="dark" className='carousel'>
+                {state.map((value, index) => (
+                    <Carousel.Item key={index}>
+                        <div className='image-container'>
+                        <img
+                            className="img"
+                            src={value.image}
+                            alt={`Slide ${index}`}
+                        />
+                        </div>
+                        <Carousel.Caption className='caption'>
+                            <h3>{value.fullname}</h3>
+                            <h4>{value.address}</h4>
+                            <div style={{ display: 'flex', justifyContent: 'center' }} className='star my-2'>
+                                    {renderStars(value.rating)}
+                                </div>
+                            <h6>{value.review}</h6>
+                        </Carousel.Caption>
+                    </Carousel.Item>
                 ))}
-            </div>
-        </div>
-    );
-};
+            </Carousel>
+         </div>
+         </Col>
+         <Col sm={12} md={6} className='my-5 mx-auto'>
+         <Reviewform />
+         </Col>
+         </Row>
+         </Container>
+</section>
 
-// Styling
-const styles = {
-    container: {
-        width: '50%',
-        margin: '0 auto',
-        textAlign: 'center',
-        padding: '20px',
-        borderRadius: '8px',
-        border: '1px solid #ccc',
-    },
-    form: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        marginBottom: '20px',
-    },
-    input: {
-        width: '80%',
-        padding: '10px',
-        marginBottom: '10px',
-        borderRadius: '5px',
-        border: '1px solid #ccc',
-    },
-    textarea: {
-        width: '80%',
-        height: '100px',
-        padding: '10px',
-        marginBottom: '10px',
-        borderRadius: '5px',
-        border: '1px solid #ccc',
-    },
-    button: {
-        padding: '10px 20px',
-        borderRadius: '5px',
-        border: 'none',
-        backgroundColor: '#4CAF50',
-        color: 'white',
-        cursor: 'pointer',
-    },
-    reviewList: {
-        marginTop: '20px',
-    },
-    reviewCard: {
-        border: '1px solid #ccc',
-        borderRadius: '5px',
-        padding: '15px',
-        marginBottom: '10px',
-    },
-};
 
-export default ReviewSection;
+  )
+}
+
+export default Reviews
