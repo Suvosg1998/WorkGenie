@@ -15,6 +15,7 @@ import AllProfile from '../Components/Registration/Login/Profile/AllProfile';
 import ReviewSection from '../Components/Reviews/Reviews';
 import Edit_profile from '../Components/Registration/Login/Profile/Edit_profile';
 import Admin from '../Components/Postjob/Jobs/Admin';
+import Contact from '../Components/Contact/Contact';
 
 function Routing() {
   return (
@@ -35,6 +36,7 @@ function Routing() {
         <Route path='admin/view'element={<View/>}/>
         <Route path='admin/view/jobDetails/:id'element={<JobDetails/>}/>
         <Route path='admin/view/jobEdit/:id'element={<JobEdit/>}/>
+        <Route path="contact" element={<Contact />} />
       </Routes>
       <Footer/>
     </Router>

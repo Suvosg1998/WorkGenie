@@ -7,7 +7,7 @@ import { endURL } from '../../Api/ApiUrl'
 
 const Post = () => {
 
- let nevigate=useNavigate()
+ let nevigate=useNavigate();
  let api=endURL.product;
 // console.log("Product Api",api);
 
@@ -57,7 +57,7 @@ let formik=useFormik({
   return (
     <section className='m-5 d-flex justify-content-center'>
     <Form onSubmit={formik.handleSubmit} className='border border-primary rounded-2 p-4 shadow'>
-        <Form.Text className='d-flex justify-content-center fw-bold fs-4 text-primary'>Add Product</Form.Text><hr />
+        <Form.Text className='d-flex justify-content-center fw-bold fs-4 text-primary'>Post Job</Form.Text><hr />
 <Row>
       <Col>
        <Form.Group className="mb-3" controlId="company">

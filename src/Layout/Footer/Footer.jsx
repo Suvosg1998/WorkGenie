@@ -15,7 +15,7 @@ const Footer = () => {
         <ul>
           <li><b>For Job Seekers</b></li>
           <li><a href="/jobs">Jobs</a></li>
-          <li><a href="#">Publication Section</a></li>
+          <li><a href="/allprofile">freelancers</a></li>
           <li><a href="#">Companies</a></li>
         </ul>
       </div>
@@ -24,7 +24,7 @@ const Footer = () => {
           <li><b>Company</b></li>
           <li><a href="/about"> About Us</a></li>
           <li><a href="/registration">Join Us</a></li>
-          <li><a href="#">Contact us</a></li>
+          <li><a href="/contact">Contact us</a></li>
         </ul>
       </div>
       <div className="foot-icons">

@@ -49,7 +49,7 @@ else if(!pass){
 }
 else{
   swalAlert("Logged in successfully","success",800)
-nevigate(`/view`) 
+nevigate(`view`) 
 }
   }
   let formik = useFormik({

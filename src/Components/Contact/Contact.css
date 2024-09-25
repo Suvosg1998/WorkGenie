@@ -1,0 +1,40 @@
+.con-sec {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%; 
+    padding: 40px;
+}
+.con-part{
+    background-color: rgb(228, 221, 212);
+    width: 1000px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0);
+}
+.loc{
+    color: brown;
+    font-size: 15px;
+    padding-left: 40px;
+}
+.contact-h{
+   color: rgb(255, 255, 255); 
+   font-size: 30px;
+   text-decoration: underline;
+   text-decoration-color: rgb(249, 251, 249);
+   padding-bottom: 40px;
+}
+.q{
+    font-size: 15px;
+}
+.map{
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+.social{
+    font-size: 15px;
+}
+.email{
+    font-size: 15px;
+    margin: 10px 0px;
+}
