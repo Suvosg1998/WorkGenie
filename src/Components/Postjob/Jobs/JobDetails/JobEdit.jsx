@@ -77,14 +77,7 @@ if(data.deadline.length<1) err.deadline="required field";
       })
    return (
     <div>
-        {/* <ul>
-        <li>{prod_name}</li>
-        <li>{comp_name}</li>
-        <li>{model_no}</li>
-        <li>{prc}</li>
-        <li>{disc}</li>
-        <li>{col}</li>
-    </ul> */}
+        {}
         <section className='m-5 d-flex justify-content-center'>
     <Form onSubmit={formik.handleSubmit} className='form text-start shadow p-4 border rounded-4'>
         <Form.Text className='d-flex justify-content-center fw-bold fs-4 text-danger'>Edit Product</Form.Text><hr />

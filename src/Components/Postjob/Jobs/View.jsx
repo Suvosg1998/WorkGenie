@@ -48,6 +48,7 @@ const logout = () => {
 
   return (
  <section className='view m-5'>
+  {<h1>Hello! {state.map((v)=>(v.name))}</h1>}
   <div className='top d-flex justify-content-end'>
     <Button onClick={logout}  variant='outline-danger' className='d-flex m-2 fw-bold'>Logout</Button></div>
     <Table bordered striped hover className='bg-dark'>
