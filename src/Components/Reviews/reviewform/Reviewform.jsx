@@ -102,6 +102,7 @@ function Reviewform() {
                                     <FaStar
                                         key={star}
                                         size={24}
+                                        className='border border-secondary'
                                         style={{ cursor: 'pointer' }}
                                         color={star <= (hover || formik.values.rating) ? '#ffc107' : '#e4e5e9'}
                                         onMouseEnter={() => setHover(star)}
